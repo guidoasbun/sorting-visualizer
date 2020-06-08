@@ -6,7 +6,7 @@ let array = []
 
 setArray = () => {
   for (let i = 0; i < 100; i++) {
-    array.push(randomIntArray(5, 1000));
+    array.push(randomIntArray(5, 600));
   }
   return array
 }
@@ -17,4 +17,11 @@ randomIntArray = (min, max) => {
 
 array = setArray()
 
-console.log(array)
+renderArray = (array) => {
+  document.getElementById('display-array').innerHTML = array.map((val, index)=> (
+  `<div class="array-bar" key="index" style="height: ${val}px"></div>`
+)).join('')
+}
+ renderArray(array)
+
+
