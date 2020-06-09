@@ -1,11 +1,15 @@
-const reset = document.querySelector('#reset');
 const displayArray = document.querySelector('#display-array');
+const resetButton = document.querySelector('#reset');
+const quickSortButton = document.querySelector('#quickSort');
+const bubleSortButton = document.querySelector('#bubleSort');
+const mergeSortButton = document.querySelector('#mergeSort')
+
 let array = [];
 
 //initialize Array
 
 setArray = () => {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 200; i++) {
     array.push(randomIntArray(5, 600));
   }
   return array;
@@ -25,7 +29,29 @@ renderArray = (array) => {
 
 renderArray(array);
 
-reset.addEventListener('click', (e) => {
+quickSort = (origArray) => {
+  
+};
+
+bubleSort = (array) => {};
+
+resetButton.addEventListener('click', (e) => {
   e.preventDefault();
-  location.reload()
+  location.reload();
 });
+
+quickSortButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  sortedArray = quickSort(array)
+  renderArray(sortedArray)
+});
+
+bubleSortButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('Buble Sort');
+});
+
+mergeSortButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('Merge Sort')
+})
